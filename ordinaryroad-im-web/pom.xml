@@ -112,7 +112,7 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>../../docker/ordinaryroad-im/app</outputDirectory>
+                            <outputDirectory>../docker/ordinaryroad-im/app</outputDirectory>
                             <resources>
                                 <resource>
                                     <directory>${basedir}/target</directory>
