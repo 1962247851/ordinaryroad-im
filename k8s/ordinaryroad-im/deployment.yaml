@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: im
+  namespace: or-pro
+spec:
+  selector:
+    matchLabels:
+      tier: im
+  replicas: 1
+  minReadySeconds: 60
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        tier: im
+    spec:
+      containers:
+        - name: im
+          image: 10.0.12.13:5000/ordinaryroad-im
+          ports:
+            - containerPort: 9403
+              name: im
